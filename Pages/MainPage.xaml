@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="ERP.Pages.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ERP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CardStyle" TargetType="StackPanel">
+                <Style.Setters>
+                    <Setter Property="BorderThickness">
+                        <Setter.Value>
+                            <Thickness>1</Thickness>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="CornerRadius">
+                        <Setter.Value>
+                            <CornerRadius>10</CornerRadius>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="BorderBrush" Value="{ThemeResource SystemBaseMediumColor}"/>
+                    <Setter Property="Padding" Value="10"/>
+                    <Setter Property="Margin" Value="10"/>
+                </Style.Setters>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+       
+
+        <StackPanel x:Name="FrisbeePanel" Orientation="Vertical" Grid.Column="0" Grid.Row="1" Style="{StaticResource CardStyle}">
+            <TextBlock Text="Frisbees" Style="{StaticResource TitleTextBlockStyle}" TextAlignment="Center"/>
+            <Image Source="/Assets/frisbee.png" Height="450"/>
+        </StackPanel>
+
+        <StackPanel x:Name="EggPanel" Orientation="Vertical" Grid.Column="1" Grid.Row="1" Style="{StaticResource CardStyle}">
+            <TextBlock Text="Ingrédients" Style="{StaticResource TitleTextBlockStyle}" TextAlignment="Center"/>
+            <Image Source="/Assets/egg.png" Height="450"/>
+        </StackPanel>
+
+        <StackPanel x:Name="ProceduresPanel" Orientation="Vertical" Grid.Column="2" Grid.Row="1" Style="{StaticResource CardStyle}">
+            <TextBlock Text="Procédés" Style="{StaticResource TitleTextBlockStyle}" TextAlignment="Center"/>
+            <Image x:Name="ProcImage" Source="/Assets/procedure.png" Height="450"/>
+        </StackPanel>
+    </Grid>
+</Page>
